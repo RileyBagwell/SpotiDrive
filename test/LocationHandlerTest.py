@@ -8,7 +8,6 @@ class LocationHandlerTest:
         self.getDistanceTest()
 
 
-
     def getDistanceTest(self):
         """Tests the getDistance() function with various values."""
         addresses = ["9790 Dragonfly Dr, Frisco, TX",
