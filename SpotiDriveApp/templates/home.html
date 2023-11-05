@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body {
+        background-color: darkseagreen;
+    }
+</style>
+<div class="col-md-6 offset-md-3">
+    <h1>SpotiDrive</h1>
+    </br>
+    <form method="POST" action="{% url 'destination' %}">  {# Update the 'action' URL to 'destination' #}
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="starting_address" class="form-label">Enter your starting address</label>
+            <input type="text" class="form-control" id="starting_address" name="starting_address" required>
+            {# Add a 'name' attribute to the input field #}
+        </div>
+        </br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

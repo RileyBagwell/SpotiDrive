@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: darkseagreen;
+    }
+
+    .left-div {
+        float: left;
+        width: 20%;
+        border-radius: 10px;
+        background-color: lightgreen;
+        padding: 20px;
+    }
+
+    .right-div {
+        float: left;
+        width: 25%;
+        padding: 20px;
+    }
+
+    .centered-paragraph {
+        text-align: center;
+        font-size: 20px;
+    }
+</style>
+
+<div class="col-md-6 offset-md-3">
+    <h1>SpotiDrive</h1>
+    </br>
+</div>
+
+<div class="left-div">
+    <p style="font-size:20px; ">Starting Address: {{ starting_address }}</p>
+    <p style="font-size:20px; ">Destination Address: {{ destination_address }}</p>
+    <p style="font-size:20px; ">Estimated Travel Time: {{ distance }}</p>
+</div>
+<div class="right-div">
+    <p class="centered-paragraph">Playlist has been created!</p>
+    </br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/2048px-Spotify_App_Logo.svg.png" alt="Spotify Logo" style="width: 250px; height: auto;">
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: darkseagreen;
+    }
+</style>
+
+<div class="col-md-6 offset-md-3">
+    <h1>SpotiDrive</h1>
+    </br>
+    <p style="font-size:20px; ">Starting Address: {{ starting_address }}</p>
+
+    <form method="POST" action="{% url 'end' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="destination_address" class="form-label">Enter your destination address</label>
+            <input type="text" class="form-control" id="destination_address" name="destination_address" required>
+            {# Add a 'name' attribute to the input field #}
+        </div>
+        <input type="hidden" name="starting_address" value="{{ starting_address }}">
+        {# Add a hidden field to store the 'starting_address' data #}
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
